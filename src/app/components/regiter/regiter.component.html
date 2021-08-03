@@ -1,0 +1,103 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Start Register & login area -->
+<div class="my_account_page_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+    </div>
+      <div class="col-lg-4">
+          <div class="card1 card-container">
+            <h3 style="font-weight: bold; text-align:center">Đăng kí tài khoản</h3>
+            <form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+            <!-- họ và tên -->
+              <div class="form-group">
+                <label for="customer_name">Họ và tên</label>
+                <input type="text" class="form-control" placeholder="Full Name" name="FullName"
+                    #FullName="ngModel" [(ngModel)]="service.formData.FullName"
+                    required [class.invalid]="FullName.invalid &#038;&#038; FullName.touched">
+             </div>
+             <!-- tên đăng nhập -->
+             <div class="form-group">
+              <label for="customer_name">Tên đăng nhập</label>
+              <input type="text" class="form-control" placeholder="Tên đăng nhập" name="UserName"
+                  #UserName="ngModel" [(ngModel)]="service.formData.UserName"
+                  required [class.invalid]="UserName.invalid &#038;&#038; UserName.touched">
+           </div>
+             <!-- emmail  -->
+           <div class="form-group">
+            <label for="customer_name">Email</label>
+            <input type="email" class="form-control" placeholder="Email" name="Email"
+                #Email="ngModel" [(ngModel)]="service.formData.Email"
+                required [class.invalid]="Email.invalid &#038;&#038; Email.touched">
+                <div class="alert-danger" *ngIf="Email.errors && form.submitted">
+                  <div *ngIf="Email.errors.email">
+                    Email must be a valid email address
+                  </div>
+                </div>
+         </div>
+         <!-- sdt -->
+         <!-- <div class="form-group">
+          <label for="customer_name">Số điện thoại</label>
+          <input type="text" class="form-control" placeholder="Số điện thoại" name="NumberPhone"
+              #NumberPhone="ngModel" [(ngModel)]="service.formData.NumberPhone"
+              required  maxlength="8" minlength="15" [class.invalid]="NumberPhone.invalid &#038;&#038; NumberPhone.touched">
+       </div> -->
+       <!-- dia chi -->
+       <!-- <div class="form-group">
+        <label for="customer_name">Địa chỉ</label>
+        <input type="text" class="form-control" placeholder="Địa chỉ" name="FullName"
+            #Address="ngModel" [(ngModel)]="service.formData.Address"
+            required  maxlength="9" minlength="80" [class.invalid]="Address.invalid &#038;&#038; Address.touched">
+        </div> -->
+       <!-- mat khẩu -->
+     <div class="form-group">
+      <label for="customer_name">Mật khẩu</label>
+      <input type="password" class="form-control" placeholder="Mật khẩu" name="Password"
+          #Password="ngModel" [(ngModel)]="service.formData.Password"
+          required  maxlength="8" minlength="16" [class.invalid]="Password.invalid &#038;&#038; Password.touched">
+   </div>
+
+
+   <!--  -->
+   <div class="form-group">
+    <button class="btn btn-primary btn-block">Sign Up</button>
+  </div>
+
+  <div class="alert alert-warning" *ngIf="isSignUpFailed">
+    Signup failed!<br />{{ errorMessage }}
+  </div>
+  </form>
+         <div class="alert alert-success" *ngIf="isSuccessful">
+              Your registration is successful!
+            </div>
+          </div>
+          <hr>
+          <button type="button" class="btn btn-primary" style=" padding-left: 50px;padding-right: 50px;">Facebook</button>
+          <button type="button" style="float: right; padding-left: 50px;padding-right: 50px;" class="btn btn-danger">Google </button>
+          </div>
+      </div>
+      <div class="col-lg-4">
+      </div>
+  </div>
+</div>
+<!--End Register & login area -->

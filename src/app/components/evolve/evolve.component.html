@@ -1,0 +1,240 @@
+
+<div class="evolve">
+  <div class="tieude">
+    Diễn biến dịch ngày hôm nay
+  </div>
+  <div class="tabs">
+  <div class="tab-2">
+    <label for="tab2-1">Diễn biến tại Việt Nam</label>
+    <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+    <div>
+
+	<!-- DATA VIETNAM -->
+	<div class="container">
+		<!-- Total Covid Data -->
+		<div class="row">
+			<strong id="message" class="col-lg-12 col-md-12 col-12">Hệ thống đang quá tải vui long quay lại sau !!!!</strong>
+		</div>
+
+		<div class="row vnTotal" id="content-total">
+			<div class="col-md-3 col-6">
+				<div><h3 class="TotalCases" id="txtTotalCases">Tổng ca mắc</h3><h1 id="TotalCases"></h1></div>
+			</div>
+			<div class="col-md-3 col-6">
+				<div><h3 class="TotalRecovered" id="txtTotalRecovered">Tổng ca phục hồi</h3><h1 id="TotalRecovered"></h1></div>
+			</div>
+			<div class="col-md-3 col-6">
+				<div><h3 class="TotalDeaths" id="txtTotalDeaths">Tổng ca tử vong</h3><h1 id="TotalDeaths"></h1></div>
+			</div>
+			<div class="col-md-3 col-6">
+				<div><h3 class="Population" id="txtPopulation">Tổng dân số</h3><h1 id="Population"></h1></div>
+			</div>
+		</div>
+		<!-- Detail Info -->
+		<div class="row" id="content-detail">
+			<!-- Rate Info -->
+			<div class="col-lg-5 col-md-4 col-12">
+				<div class="row vnRate">
+					<div class="col-md-12 col-12">
+						<img class="vnDetailsFlag" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/640px-Flag_of_Vietnam.svg.png">
+						<span><h2>VIỆT NAM</h2></span>
+					</div>
+					<div class="col-md-6 col-6 box">
+						<div><h3 class="IncidenceRate">Tỉ lệ Nhiễm</h3><h1 id="IncidenceRate"></h1></div>
+					</div>
+					<div class="col-md-6 col-6 box">
+						<div><h3 class="RecoveryRate">Tỉ lệ Phục Hồi</h3><h1 id="RecoveryRate"></h1></div>
+					</div>
+					<div class="col-md-6 col-6 box">
+						<div><h3 class="DeathRate">Tỉ lệ Tử Vong</h3><h1 id="DeathRate"></h1></div>
+					</div>
+					<div class="col-md-6 col-6 box">
+						<div><h3 class="vacFullyVaccinatedRate">Tỉ lệ Tiêm Đủ</h3><h1 id="vacFullyVaccinatedRate"></h1></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Table City Data -->
+			<div class="col-lg-7 col-md-8 col-12">
+				<table class="table table-striped sortable-table">
+					<thead class="theadCities">
+						<tr>
+						  <th class="theadCitiesProvinces">TP/Tỉnh</th>
+						  <th class class="numeric-sort">Ca Nhiễm</th>
+						  <th class="numeric-sort">Hồi phục</th>
+						  <th class="numeric-sort" id="th-citiesDeaths">Tử vong</th>
+						</tr>
+					</thead>
+					<tbody id="tableVN">
+					</tbody>
+				</table>
+			</div>
+
+
+			<!-- Total Vaccines Data -->
+			<hr>
+			<div class="col-md-12 col-12 boxTitleDetails">
+				<div><h1 class="TitleDetails">CHI TIẾT TIÊM CHỦNG</h1></div>
+			</div>
+			<div class="row vnRate" style="width: 100%;">
+				<div class="col-md-4 col-4 VaccinesInfo">
+					<div><h3 class="vaccines">Tổng Liều Đã Tiêm</h3><h1 id="vacTotal"></h1></div>
+				</div>
+				<div class="col-md-4 col-4 VaccinesInfo">
+					<div><h3 class="vaccines">Tổng Tiêm Một Liều</h3><h1 id="vacOneDose"></h1></div>
+				</div>
+				<div class="col-md-4 col-4 VaccinesInfo">
+					<div><h3 class="vaccines">Tổng Tiêm Đủ Liều</h3><h1 id="vacTwoDose"></h1></div>
+				</div>
+			</div>
+
+			<!-- Table Details Vaccines Data -->
+			<div class="col-lg-12 col-md-12 col-12">
+				<table class="table table-striped sortable-table">
+					<thead class="theadCities">
+						<tr>
+						  <th class="theadCitiesProvinces">TP/Tỉnh</th>
+						  <th class="numeric-sort">Liều Đã Tiêm</th>
+						  <th class="numeric-sort" >Một Liều</th>
+						  <th class="numeric-sort">Đủ Liều</th>
+						</tr>
+					</thead>
+					<tbody id="tableVNdose">
+					</tbody>
+				</table>
+			</div>
+
+
+			<!-- Total Vaccines by Type Data -->
+			<hr>
+			<div class="col-md-12 col-12 boxTitleDetails">
+				<div><h1 class="TitleDetails">PHÂN BỔ VẮCXIN</h1></div>
+			</div>
+			<div class="row vnRate" style="width: 100%;">
+
+				<div class="col-md-4 col-4 VaccinesInfo">
+					<div><h3 class="vaccines" id="txtPlanned">Tổng Vắcxin Kế Hoạch</h3><h1 id="totalPlanned"></h1></div>
+				</div>
+				<div class="col-md-4 col-4 VaccinesInfo">
+					<div><h3 class="vaccines" id="txtRealistic">Tổng Vắcxin Thực Tế</h3><h1 id="totalRealistic"></h1></div>
+				</div>
+				<div class="col-md-4 col-4 VaccinesInfo">
+					<div><h3 class="vaccines" id="txtDistriRate">Tổng Tỉ Lệ Đã Phân Bổ</h3><h1 id="totalDistriRate"></h1></div>
+				</div>
+			</div>
+
+			<!-- Table Detail Vaccines by Type Data-->
+			<div class="col-lg-12 col-md-12 col-12">
+				<table class="table table-striped sortable-table">
+					<thead class="theadCities">
+						<tr>
+						  <th class="theadCitiesProvinces">TP/Tỉnh</th>
+						  <th class="numeric-sort">Kế Hoạch</th>
+						  <th class="numeric-sort">Thực Tế</th>
+						  <th class="numeric-sort">Tỉ Lệ</th>
+						</tr>
+					</thead>
+					<tbody id="tableVNvacDistribution">
+					</tbody>
+				</table>
+			</div>
+
+
+			<!-- Chart JS -->
+			<div class="col-md-12 col-12 ChartData" id="AllChart" >
+				<hr>
+				<p class="dailyChart" id="dailyChart">DAILY HISTORY</p>
+				<!-- Total Data Chart -->
+				<fieldset id="fieldsetCasesDataChart">
+					<legend id="txtCasesDataChart">CA NHIỄM</legend>
+					<div class="row">
+						<div class="col-md-6"><canvas id="newcasesChart" class="chart"></canvas></div>
+						<div class="col-md-6"><canvas id="casesChart" class="chart"></canvas></div>
+					</div>
+				</fieldset>
+				<!-- New Data Chart -->
+				<fieldset id="fieldsetDeathsDataChart">
+					<legend id="txtDeathsDataChart">TỬ VONG</legend>
+					<div class="row">
+						<div class="col-md-6"><canvas id="newdeathsChart" class="chart"></canvas></div>
+						<div class="col-md-6"><canvas id="deathsChart" class="chart"></canvas></div>
+					</div>
+				</fieldset>
+				<!-- New Data Chart -->
+				<fieldset id="fieldsetDoseVaccinatedDataChart">
+					<legend id="txtDoseVaccinatedDataChart">LIỀU ĐÃ TIÊM</legend>
+					<div class="row">
+					  <div class="col-md-6"><canvas id="newvaccineChart" class="chart"></canvas></div>
+					  <div class="col-md-6"><canvas id="vaccineChart" class="chart"></canvas></div>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+
+
+    </div>
+  </div>
+  <div class="tab-2">
+    <label for="tab2-2">Diễn biến dịch các nước trên thế giới</label>
+    <input id="tab2-2" name="tabs-two" type="radio">
+    <div>
+      <div class="container" id="contentWorld">
+        <!-- Title -->
+        <div class="text-center" id="headerWorld">
+          <p class="title text-center">  <img class="logocovid"src="https://img.mlo-online.com/files/base/ebm/mlo/image/2020/05/Pixabay_coronavirus_5107715_1280.5eb16e6f5f05a.png?auto=format&w=720"> Bộ Theo Dõi Covid-19</p>
+        </div>
+        <p class="text-center description">Dữ liệu về Tình hình Dịch bệnh Các nước trên toàn Thế giới</p>
+
+        <!-- Time -->
+        <div class="text-center time"><div class="text-bold" id="time"></div>(UTC+7)</div>
+
+        <!-- Loader -->
+        <div class="container loader" id="loader"></div>
+
+        <!-- Global -->
+        <div id="global">
+          <fieldset id="fieldsetGlobal">
+            <legend id="txtGlobal">THẾ GIỚI</legend>
+            <div class="row">
+              <div class="col-md-4 col-4">
+                <div style="margin: 25px 25px 40px 25px;"><h3 class="TotalCases">Tổng nhiễm</h3><h1 id="GlobalCases"></h1></div>
+              </div>
+              <div class="col-md-4 col-4">
+                <div style="margin: 25px 25px 40px 25px;"><h3 class="TotalRecovered">Tổng phục hồi</h3><h1 id="GlobalRecovered"></h1></div>
+              </div>
+              <div class="col-md-4 col-4">
+                <div style="margin: 25px 25px 40px 25px;"><h3 class="TotalDeaths">Tổng tử vong</h3><h1 id="GlobalDeaths"></h1></div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- Countries -->
+        <div id="countries">
+          <div class="search">
+            <input type="text" id="searchInput" class="search-input" placeholder="Nhập quốc gia cần tìm kiếm . . .">
+            <i class="search-icon fa fa-search"></i>
+          </div>
+
+          <table class="table table-striped sortable-table">
+            <thead>
+              <tr>
+                <th class="th-contries-flags"></th>
+                <th class="th-contries">Quốc gia</th>
+                <th class="numeric-sort">Ca nhiễm</th>
+                <th class="numeric-sort">Phục hồi</th>
+                <th class="numeric-sort">Tử vong</th>
+                <th class="numeric-sort">Dân số</th>
+              </tr>
+            </thead>
+            <tbody id="table"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+
