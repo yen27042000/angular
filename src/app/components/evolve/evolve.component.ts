@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { covid } from 'src/app/models/covid.model';
-import { CodvidService } from 'src/app/services/codvid.service';
 
 @Component({
   selector: 'app-evolve',
