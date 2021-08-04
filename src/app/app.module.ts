@@ -1,7 +1,9 @@
+import { AuthInterceptor } from './auth/auth.interceptor';
+import { UserService } from './services/user.service';
+import { Router, Routes } from '@angular/router';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -10,11 +12,11 @@ import { HomeComponent } from './components/home/home.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { GuessComponent } from './components/guess/guess.component';
 import { EvolveComponent } from './components/evolve/evolve.component';
-import { RegiterComponent } from './components/regiter/regiter.component';
 import { ToastrModule } from 'ngx-toastr';
 import { FormsModule } from '@angular/forms';
-import { LoginComponent } from 'src/app/components/login/login.component';
+
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { UserComponent } from './components/user/user.component';
 
 
 @NgModule({
@@ -26,8 +28,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     ContactComponent,
     GuessComponent,
     EvolveComponent,
-    RegiterComponent,
-    LoginComponent,
+    UserComponent,
 
   ],
   imports: [
@@ -37,9 +38,13 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
       progressBar: true
     }),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [UserService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
